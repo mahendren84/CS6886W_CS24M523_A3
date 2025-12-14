@@ -11,7 +11,6 @@ Train an **FP32** MobileNetV2 baseline on **CIFAR‑10**, then evaluate **manual
 ```
 .
 ├── train.py                 # Train FP32 baseline (saves best checkpoint)
-├── wandbtrain.py            # Same as train.py (alias for convenience)
 ├── test.py                  # Evaluate FP32 + optional quantization + compression stats
 ├── data.py                  # CIFAR-10 loaders/transforms
 ├── models/
@@ -60,10 +59,10 @@ python train.py \
   --save-path ./checkpoints/mobilenetv2_cifar10_fp32_pretrained.pth
 ```
 
-**Full baseline run (300 epochs + W&B logging)** (matches the notebook; `wandbtrain.py` == `train.py`):
+**Full baseline run (300 epochs + W&B logging)** (matches the notebook; `train.py` == `train.py`):
 
 ```bash
-python wandbtrain.py \
+python train.py \
   --data-dir ./data \
   --batch-size 128 \
   --epochs 300 \
@@ -193,6 +192,6 @@ tree -L 3 .
 
 ## Validation note (from the notebook)
 
-If you see commands using flags like `--sweep-method` or `--sweep-runs` for `train.py`/`wandbtrain.py`: those flags are **not supported** by this repo’s `argparse`.
+If you see commands using flags like `--sweep-method` or `--sweep-runs` for `train.py`/`train.py`: those flags are **not supported** by this repo’s `argparse`.
 
 Use **W&B sweep YAML + `wandb sweep` / `wandb agent`** (shown above) instead.
