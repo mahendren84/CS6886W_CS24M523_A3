@@ -1,4 +1,4 @@
-program: /content/drive/MyDrive/DL_A3/cs6886_assignment3_solution/test.py
+program: /content/CS6886W_CS24M523_A3/test.py
 
 method: grid
 
@@ -21,9 +21,9 @@ command:
   - python
   - ${program}
   - --checkpoint
-  - /content/drive/MyDrive/DL_A3/cs6886_assignment3_solution/checkpoints/mobilenetv2_cifar10_fp32_pretrained.pth
+  - /content/CS6886W_CS24M523_A3/checkpoints/mobilenetv2_cifar10_fp32_pretrained.pth
   - --data-dir
-  - /content/drive/MyDrive/DL_A3/cs6886_assignment3_solution/data
+  - /content/CS6886W_CS24M523_A3/data
   - --weight-per-channel
   - --log-wandb
   - --wandb-project
